@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+  <section id="homeScreen" class="screen active">
+
+    <div class="logo">
+      MOVIE<span>MATCH</span>
+    </div>
+
+    <p class="tagline">
+      Find a movie you both actually want to watch.
+    </p>
+
+    <div class="hero-card">
+
+      <div class="hero-poster">
+        🎬
+      </div>
+
+      <h1>
+        Two people.<br>
+        One movie night.
+      </h1>
+
+      <p>
+        Like or dislike movies, then discover your mutual matches.
+      </p>
+
+      <button id="startBtn" class="primary-btn">
+        Start Matching
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <section id="setupScreen" class="screen">
+
+    <div class="logo small">
+      MOVIE<span>MATCH</span>
+    </div>
+
+    <h2>MovieMatch Setup</h2>
+
+    <p class="muted">
+      Enter your TMDB API Read Access Token to load real movies.
+    </p>
+
+    <input
+      id="apiKey"
+      class="api-input"
+      type="password"
+      placeholder="TMDB API Read Access Token"
+    >
+
+    <button
+      id="loadMoviesBtn"
+      class="primary-btn"
+    >
+      Load Movies
+    </button>
+
+    <p id="setupMessage" class="message"></p>
+
+    <p class="tiny">
+      Your token is used only in this browser session.
+    </p>
+
+  </section>
+
+
+  <section id="playerScreen" class="screen">
+
+    <div class="logo small">
+      MOVIE<span>MATCH</span>
+    </div>
+
+    <h2>Who's choosing first?</h2>
+
+    <p class="muted">
+      Each player gets the same movie deck.
+    </p>
+
+    <div class="player-buttons">
+
+      <button
+        class="player-btn"
+        data-player="1"
+      >
+        Player 1
+      </button>
+
+      <button
+        class="player-btn"
+        data-player="2"
+      >
+        Player 2
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <section id="matchScreen" class="screen">
+
+    <header class="topbar">
+
+      <div class="logo small">
+        MOVIE<span>MATCH</span>
+      </div>
+
+      <div id="progress">
+        1 / 20
+      </div>
+
+    </header>
+
+    <div
+      class="player-label"
+      id="playerLabel"
+    >
+      Player 1
+    </div>
+
+
+    <div
+      class="movie-card"
+      id="movieCard"
+    >
+
+      <div
+        class="poster"
+        id="poster"
+      >
+
+        <img
+          id="posterImage"
+          alt="Movie poster"
+        >
+
+        <div class="poster-overlay">
+
+          <span id="movieYear"></span>
+
+          <h2 id="movieTitle"></h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="movie-info">
+
+        <div class="rating">
+          ★
+          <span id="movieRating"></span>
+        </div>
+
+        <div
+          class="genres"
+          id="movieGenres"
+        ></div>
+
+        <p id="movieDescription"></p>
+
+      </div>
+
+    </div>
+
+
+    <div class="swipe-buttons">
+
+      <button
+        id="dislikeBtn"
+        class="swipe-btn dislike"
+      >
+        ✕
+      </button>
+
+      <button
+        id="likeBtn"
+        class="swipe-btn like"
+      >
+        ♥
+      </button>
+
+    </div>
+
+    <p class="hint">
+      ← Nope &nbsp;&nbsp;&nbsp; Like →
+    </p>
+
+  </section>
+
+
+  <section id="resultsScreen" class="screen">
+
+    <div class="logo small">
+      MOVIE<span>MATCH</span>
+    </div>
+
+    <div class="results-header">
+
+      <div class="match-icon">
+        ♥
+      </div>
+
+      <h1 id="resultTitle">
+        It's a Match!
+      </h1>
+
+      <p id="resultSubtitle"></p>
+
+    </div>
+
+
+    <div
+      id="matches"
+      class="matches"
+    ></div>
+
+
+    <div
+      id="noMatches"
+      class="no-matches hidden"
+    >
+
+      <div>😬</div>
+
+      <h2>No Matches This Time</h2>
+
+      <p>
+        Your movie tastes did not intersect.
+      </p>
+
+    </div>
+
+
+    <button
+      id="restartBtn"
+      class="primary-btn"
+    >
+      Start Again
+    </button>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
